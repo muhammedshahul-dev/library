@@ -62,7 +62,7 @@ function DisplayBooks(){
         const statusCell = document.createElement("td")
         const readCell = document.createElement('button')
         readCell.textContent = library.read ? "read" : "not read";
-
+        readCell.className = library.read ? "status-btn read" : "status-btn unread";
         readCell.addEventListener('click', event =>{
             library.read = !library.read
             DisplayBooks()

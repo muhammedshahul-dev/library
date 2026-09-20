@@ -1,50 +1,204 @@
-body {
-    margin: 50px 100px;
-    font-family: sans-serif;
+/* Clean Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+body {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+    font-family: system-ui, -apple-system, sans-serif;
+    background-color: #ffffff;
+    color: #000000;
+    line-height: 1.4;
+}
+
+/* Header */
+header {
+    margin-bottom: 30px;
+    border-bottom: 2px solid #000000;
+    padding-bottom: 15px;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+header p {
+    color: #444444;
+    font-size: 0.95rem;
+    margin-top: 5px;
+}
+
+header a {
+    color: #000000;
+    font-weight: 600;
+}
+
+/* Form Container */
 .library-form {
-    max-width: 800px;
+    border: 1px solid #000000;
+    padding: 20px;
+    margin-bottom: 30px;
 }
 
 .form-inputs {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-wrap: wrap;
     gap: 15px;
 }
 
 .inputs {
     display: flex;
     flex-direction: column;
-    flex: 1;
-}
-
-/* Match both inputs and select elements */
-.inputs input,
-.inputs select {
-    height: 35px;
-    padding: 0 8px;
-    box-sizing: border-box;
+    flex: 1 1 180px;
 }
 
 .inputs label {
-    font-size: large;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
     margin-bottom: 5px;
 }
 
-.submit {
-    margin-top: 20px;
-    padding: 12px 30px;
-    background-color: rgb(30, 128, 220);
-    border: none;
-    color: white;
-    font-size: large;
-    font-weight: 500;
-    border-radius: 5px;
+/* Inputs & Select Styling */
+.inputs input,
+.inputs select {
+    height: 40px;
+    padding: 0 10px;
+    border: 1px solid #000000;
+    font-size: 0.95rem;
+    background-color: #ffffff;
+    border-radius: 4px;
+    color: #000000;
+}
+
+/* Select Dropdown & Options Specifics */
+.inputs select {
     cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%22%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23000000%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2FSvg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px top 50%;
+    background-size: 10px auto;
+    padding-right: 30px;
+}
+
+.inputs select option {
+    background-color: #ffffff;
+    color: #000000;
+    padding: 10px;
+    font-size: 0.95rem;
+}
+
+.inputs input:focus,
+.inputs select:focus {
+    outline: 2px solid #000000;
+}
+
+/* --- BUTTONS (Rounded & Colored) --- */
+
+.submit {
+    margin-top: 15px;
+    width: 100%;
+    height: 42px;
+    background-color: #2563eb; /* Blue */
+    border: none;
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
 }
 
 .submit:hover {
-    background-color: rgb(20, 105, 185);
+    background-color: #1d4ed8;
+}
+
+.status-btn {
+    padding: 7px 14px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.status-btn.read {
+    background-color: #16a34a; /* Green */
+    color: #ffffff;
+}
+
+.status-btn.unread {
+    background-color: #dc2626; /* Red */
+    color: #ffffff;
+}
+
+.status-btn:hover {
+    opacity: 0.85;
+}
+
+.delete-btn {
+    background-color: #ef4444; /* Red */
+    color: #ffffff;
+    border: none;
+    padding: 7px 14px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.delete-btn:hover {
+    background-color: #b91c1c;
+}
+
+/* Table Design */
+#libraryDisplay {
+    border: 1px solid #000000;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+thead {
+    border-bottom: 2px solid #000000;
+    background-color: #ffffff;
+}
+
+th {
+    padding: 12px 15px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+td {
+    padding: 12px 15px;
+    font-size: 0.95rem;
+    border-bottom: 1px solid #cccccc;
+    vertical-align: middle;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+@media (max-width: 600px) {
+    body {
+        margin: 20px 10px;
+    }
+    .form-inputs {
+        flex-direction: column;
+    }
 }
