@@ -3,49 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>My Library</title>
     <link rel="stylesheet" href="style.css">
-    
 </head>
 <body>
     <header>
-        <h1>
-            My library
-        </h1>
-        <h2>
-            this is a project for <a href="https://www.theodinproject.com/">The Odin Project</a> in which I have to make a library using Object Constructors and LocalStorage.
-            You can also view the Github repository of this project.
-        </h2>
+        <h1>My Library</h1>
+        <p>
+            This is a project for <a href="https://www.theodinproject.com/">The Odin Project</a> in which I have to make a library using Object Constructors and LocalStorage.
+            You can also view the GitHub repository of this project.
+        </p>
     </header>
     <main>
         <div>
-            <form class="library-form">
+            <form class="library-form" id="libraryForm">
                 <div class="form-inputs">
-                    <div class="">
-                        <label for="title">title</label>
-                        <input type="text" name="title" id="title">
+                    <div class="inputs">
+                        <label for="title">Title</label>
+                        <input type="text" name="title" id="title" required>
                     </div>
-                    <div class="">
-                        <label for="author">author</label>
-                        <input type="text" name="author" id="author">
+                    <div class="inputs">
+                        <label for="author">Author</label>
+                        <input type="text" name="author" id="author" required>
                     </div>
-                    <div class="">
-                        <label for="read">read</label>
+                    <div class="inputs">
+                        <label for="pages">Pages</label>
+                        <input type="number" name="pages" id="pages" required min="1">
+                    </div>
+                    <div class="inputs">
+                        <label for="read">Read</label>
                         <select name="read" id="read">
-                            <option value="true">read</option>
-                            <option value="false">not read</option>
+                            <option value="true">Read</option>
+                            <option value="false">Not Read</option>
                         </select>
-                        
                     </div>
                 </div>
-                <input type="submit" value="submit">
+                <input type="submit" value="Submit" class="submit">
             </form>
         </div>
+        <div id="libraryDisplay"></div>
     </main>
-    <footer>
-
-    </footer>
+    <footer></footer>
     <script src="app.js"></script>
 </body>
-
 </html>

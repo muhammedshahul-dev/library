@@ -1,0 +1,50 @@
+body {
+    margin: 50px 100px;
+    font-family: sans-serif;
+}
+
+.library-form {
+    max-width: 800px;
+}
+
+.form-inputs {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+/* Match both inputs and select elements */
+.inputs input,
+.inputs select {
+    height: 35px;
+    padding: 0 8px;
+    box-sizing: border-box;
+}
+
+.inputs label {
+    font-size: large;
+    margin-bottom: 5px;
+}
+
+.submit {
+    margin-top: 20px;
+    padding: 12px 30px;
+    background-color: rgb(30, 128, 220);
+    border: none;
+    color: white;
+    font-size: large;
+    font-weight: 500;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submit:hover {
+    background-color: rgb(20, 105, 185);
+}
